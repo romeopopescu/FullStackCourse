@@ -21,6 +21,7 @@ const App = () => {
   const [selected, setSelected] = useState(0)
   let array = [0, 0, 0, 0, 0, 0, 0, 0]
   let array1 = Array(8).fill(0)
+  let i = 0
   return (
     <div>
       <p>{anecdotes[selected]}</p>
