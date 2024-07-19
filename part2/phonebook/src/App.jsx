@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <h1>Phonebook</h1>
       <form>
         <div>
           name: <input />
@@ -17,7 +17,7 @@ const App = () => {
           <button type="submit">add</button>
         </div>
       </form>
-      <h2>Numbers</h2>
+      <h1>Numbers</h1>
       .....
     </div>
   )
