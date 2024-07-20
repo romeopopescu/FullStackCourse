@@ -7,6 +7,7 @@ const App = () => {
   const [newName, setNewName] = useState('')
 
   return (
+    
     <div>
       <h1>Phonebook</h1>
       <form>
@@ -18,6 +19,7 @@ const App = () => {
         </div>
       </form>
       <h1>Numbers</h1>
+
       .....
     </div>
   )
