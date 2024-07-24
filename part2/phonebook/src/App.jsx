@@ -6,6 +6,7 @@ import Persons from './components/Persons'
 import axios from 'axios'
 
 const App = () => {
+
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
   const [showAll, setShowAll] = useState(true)
@@ -22,6 +23,7 @@ const App = () => {
       })
   }, [])
   
+
   //add name event
   const addInfo = (event) => {
     event.preventDefault()
