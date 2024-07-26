@@ -28,10 +28,12 @@ const App = () => {
     for (let i = 0; i < persons.length; i++) {
       if (newName === persons[i].name && newNumber !== persons[i].number) {
         confirm(`${newName} is already added to phonebook, do you want to replace the number?`)
-        personService
-          .update(i + 1, persons[i])
-          .then(pers => pers.number = newNumber)
-          return
+        const persObject = {
+          name: newName,
+          number: newNumber,
+        }
+        personService.update(persons[i].id, persObject)
+        return 
       }
       else if (newName === persons[i].name ) {
         return alert(`${newName} is already added to phonebook`)
