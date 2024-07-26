@@ -5,6 +5,7 @@ import Filter from './components/Filter'
 import Person from './components/Person'
 import Persons from './components/Persons'
 import axios from 'axios'
+import Notification from './components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -12,7 +13,8 @@ const App = () => {
   const [showAll, setShowAll] = useState(true)
   const [newNumber, setNewNumber] = useState('')  
   const [search, setNewSearch] = useState('')
-
+  const [message, setMessage] = useState(null)
+  
   useEffect(() => {
     personService
       .getAll()
@@ -51,8 +53,11 @@ const App = () => {
       .create(newObject)
       .then(newPerson => {
         setPersons(persons.concat(newPerson))
+        setMessage(`${newName} was added to the list`)
+        setTimeout(() => {setMessage(null)}, 5000)
         setNewName(' ')
         setNewNumber(' ')
+          
       })
   }
   //handle the name change in input (takes what you write)
@@ -74,6 +79,7 @@ const App = () => {
     
     <div>
       <h1>Phonebook</h1>
+        <Notification message={message}/>
         <Filter value={search} onChange={handleSearchChange}/>
       <h1>add a new</h1>
        <PersonForm addInfo={addInfo} newName={newName} newNumber={newNumber}
