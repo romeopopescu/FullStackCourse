@@ -26,10 +26,17 @@ const App = () => {
     event.preventDefault()
 
     for (let i = 0; i < persons.length; i++) {
-      if (newName === persons[i].name ) {
+      if (newName === persons[i].name && newNumber !== persons[i].number) {
+        confirm(`${newName} is already added to phonebook, do you want to replace the number?`)
+        personService
+          .update(i + 1, persons[i])
+          .then(pers => pers.number = newNumber)
+          return
+      }
+      else if (newName === persons[i].name ) {
         return alert(`${newName} is already added to phonebook`)
       }
-      if (newNumber === persons[i].number) {
+      else if (newNumber === persons[i].number) {
         return alert(`${newNumber} is already added to phonebook`)
       }
     }
@@ -45,7 +52,6 @@ const App = () => {
         setNewName(' ')
         setNewNumber(' ')
       })
-    setPersons(persons.concat(newObject))
   }
   //handle the name change in input (takes what you write)
   const handleNameChange = (event) => {
