@@ -78,6 +78,7 @@ const App = () => {
   return (
     
     <div>
+    
       <h1>Phonebook</h1>
         <Notification message={message}/>
         <Filter value={search} onChange={handleSearchChange}/>
@@ -88,6 +89,7 @@ const App = () => {
       <div>
         <Persons namesToShow={namesToShow} namesDeleted={namesDeleted}/>
       </div>
+
     </div>
   )
 }
