@@ -83,9 +83,10 @@ const App = () => {
         <Notification message={message}/>
         <Filter value={search} onChange={handleSearchChange}/>
       <h1>add a new</h1>
-       <PersonForm addInfo={addInfo} newName={newName} newNumber={newNumber}
-          handleNameChange={handleNameChange} handleNumberChange={handleNumberChange}/> 
+        <PersonForm addInfo={addInfo} newName={newName} newNumber={newNumber}
+        handleNameChange={handleNameChange} handleNumberChange={handleNumberChange}/> 
       <h1>Numbers</h1>
+
       <div>
         <Persons namesToShow={namesToShow} namesDeleted={namesDeleted}/>
       </div>
