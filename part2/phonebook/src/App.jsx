@@ -8,6 +8,7 @@ import axios from 'axios'
 import Notification from './components/Notification'
 
 const App = () => {
+  
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
   const [showAll, setShowAll] = useState(true)
